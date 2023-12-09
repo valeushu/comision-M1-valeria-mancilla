@@ -14,7 +14,7 @@ Para ejecutarlo "npm run dev"
 Cambiar el nombre del archivo .env.example a .env
 Definir puerto en el archivo .env
 Para ejecutarlo "npm run dev" 
-luego en el navegador desde [Servidor local](http://localhost:4000)
+luego en el navegador desde [Servidor local](http://localhost:3000)
 
 ## Web
 
