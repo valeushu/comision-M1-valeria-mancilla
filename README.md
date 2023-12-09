@@ -1,4 +1,4 @@
-# Proyecto-Argentina programa
+# Proyecto-Argentina programa tramo III
 
 El mismo consiste en la creación de una Plataforma Interactiva de Posts con Registro y Login
 
@@ -22,7 +22,7 @@ luego en el navegador desde [Servidor local](http://localhost:4000)
 ![main](markdown/screencapture-localhost-3000-register-2023-12-09-16_54_22.png)
 
 ## Login
-![main](markdown\screencapture-localhost-3000-login-2023-12-09-17_18_05.png)
+![Alt text](markdown\screencapture-localhost-3000-login-2023-12-09-17_18_05.png)
 
 ## Home
-![main](markdown\screencapture-localhost-3000-2023-12-09-17_18_20.png)
+![Alt text](markdown\screencapture-localhost-3000-2023-12-09-17_18_20.png)
