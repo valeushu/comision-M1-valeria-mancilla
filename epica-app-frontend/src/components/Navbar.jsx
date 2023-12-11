@@ -7,9 +7,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        {/* <Link className="navbar-brand" to="/">
           Navbar
-        </Link>
+        </Link> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -39,7 +39,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout} className="btn btn-danger">
+            Logout
+          </button>
         </div>
       </div>
     </nav>

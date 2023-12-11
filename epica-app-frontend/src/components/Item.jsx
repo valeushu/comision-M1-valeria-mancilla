@@ -26,7 +26,7 @@ const PostItem = ({ post, getPost, onClick }) => {
         <h2>{post.title}</h2>
         <p>
           <b>{post.author.username}</b>
-          <span>{post.comments.length}</span>
+          {/* <span>{post.comments.length}</span> */}
         </p>
       </section>
       <div>
