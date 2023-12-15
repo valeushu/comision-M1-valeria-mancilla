@@ -12,12 +12,28 @@ import { PostModel } from '../models/post.js';
     //   return res.status(403).json({ error: 'User is not the post author' });
     // }
     try {
-      const comments = await CommentModel.find({ post: postId }, [
-        '-__v',
-      ]).populate('post', ['-comments', '-author',  '-description', '-__v']);
-      
-  
-      res.status(200).json(comments);
+      const post = await PostModel.findById(postId)
+      .populate({
+        path: 'author',
+        select: '_id username avatar',
+      })
+      .select('-__v');
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+
+    // Now, let's separately populate the comments
+    const populatedPost = await CommentModel.populate(post, {
+      path: 'comments',
+      select: '-__v',
+      populate: {
+        path: 'author',
+        select: '_id username avatar',
+      },
+    });
+
+    res.status(200).json(populatedPost);
     } catch (error) {
       console.log(error)
       res.status(500).json({ error: "Couldn't get comments" });
@@ -27,19 +43,17 @@ import { PostModel } from '../models/post.js';
 export const ctrlCreateComment = async (req, res) => {
   const { postId } = req.params;
   const userId = req.user._id;
+  const { author, description } = req.body;
   try {
     const comment = new CommentModel({
-      ...req.body,
+      // author,
+      description,
       post: postId,
       author: userId,
     });
 
     await comment.save();
-    await comment
-    .populate('post', ['title', 'description', 'imageURL']);
     
-   
-
     await PostModel.findOneAndUpdate(
       { _id: postId },
       { $push: { comments: comment._id } }

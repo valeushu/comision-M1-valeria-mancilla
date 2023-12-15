@@ -53,5 +53,8 @@
   border: 1px solid #ddd;
   transition: border-color 0.3s ease-in-out;
 }
+h2{
+  text-align: center;
+}
 
 

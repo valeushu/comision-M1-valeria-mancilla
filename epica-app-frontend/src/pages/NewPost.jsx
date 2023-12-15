@@ -46,7 +46,7 @@ const NewPost = () => {
   return (
     <div>
       <Navbar />
-      <h2>Create a new Post</h2>
+      <h2>Create post</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
           <label htmlFor={titleId}>Title:</label>
